@@ -1,6 +1,7 @@
 " Leader
 nnoremap <SPACE> <Nop>
-let mapleader = " "
+" let mapleader = " "
+let mapleader = "\<Space>"
 
 " Use tab with text block
 vmap <Tab> >gv
@@ -95,3 +96,6 @@ cmap W w
 cmap Q q
 cmap E e
 
+" use Ctrl+c to toggle the search buffer and toggle highlighting off/on
+let hlstate=0
+nnoremap <c-c> :if (hlstate%2 == 0) \| nohlsearch \| else \| set hlsearch \| endif \| let hlstate=hlstate+1<cr>

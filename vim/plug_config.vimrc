@@ -72,6 +72,11 @@ let g:ycm_filter_diagnostics = {
 	\     ]
 	\   }
 	\ }
+let g:ycm_filepath_blacklist = {
+      \ 'html': 1,
+      \ 'jsx': 1,
+      \ 'xml': 1,
+      \}
 set completeopt-=preview
 let g:EclimFileTypeValidate = 0
 let g:EclimCompletionMethod = 'omnifunc'
@@ -119,6 +124,7 @@ let g:jsx_ext_required = 0
 
 " #EMMET {{{
 let g:user_emmet_install_global = 1
+let g:user_emmet_leader_key=' '
 imap <expr> <C-e> emmet#expandAbbrIntelligent("\<tab>")
 "}}}
 

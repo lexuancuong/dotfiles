@@ -106,3 +106,4 @@ augroup END
 
 " Try to make vertical bar transparent
 hi VertSplit guibg=NONE guifg=NONE ctermbg=NONE ctermfg=NONE
+
