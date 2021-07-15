@@ -30,7 +30,13 @@ If you want to get newest version of `vim/neovim` plugin, in `vim/neovim` simply
 
 You can customize your editor style in `./vimrc` file.
 
-Please raise some issues if you have a better plugin for me.
+If you have some problem with YCM after run the script, you can restart YCM server by this command:
+
+    :YCMRestartServer
+
+Please raise some issues if you have a better plugin or approach for me.
+
+Install and chilllll!!!!
 
 Credit
 
