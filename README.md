@@ -1,5 +1,5 @@
 # dotfiles
-A set of `vim/neovim`, `zsh`, `tmux`,`fzf`,.etc. configuration files for Python + TS Developer on macOS.
+A set of `vim/neovim`, `zsh`, `tmux`,`fzf`,..etc.. configuration files for Python and JS/TS Developer on LinuxOS.
 
 ![Screenshot](./assets/my-vim-screenshot.png)
 
@@ -31,7 +31,9 @@ If you want to get newest version of `vim/neovim` plugin, in `vim/neovim` simply
 You can customize your editor style in `./vimrc` file.
 
 Please raise some issues if you have a better plugin for me.
+
 Credit
+
 -------
 
 Thanks to:

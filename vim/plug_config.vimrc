@@ -28,6 +28,9 @@ set foldcolumn=1
 hi foldcolumn guibg=bg
 hi VertSplit guibg=bg guifg=bg
 
+" For javascript
+autocmd BufEnter *.{js,jsx,ts,tsx} :syntax sync fromstart
+autocmd BufLeave *.{js,jsx,ts,tsx} :syntax sync clear
 
 " FZF
 nnoremap f :FZF<CR>
@@ -84,6 +87,7 @@ let g:ycm_python_binary_path = 'python3'
 let g:ycm_key_invoke_completion = '<C-n>'
 let g:ycm_disable_for_files_larger_than_kb = 2000
 nnoremap gd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+au BufNewFile,BufRead *.tsx set filetype=typescript
 " nmap <Leader>f :Format <CR>
 
 " Easymotion

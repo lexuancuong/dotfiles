@@ -101,7 +101,7 @@ function link_dotfiles {
   ln -s $(pwd)/vim/plug_list.vimrc ~/plug_list.vimrc
   ln -s $(pwd)/vim/plug_config.vimrc ~/plug_config.vimrc
   ln -s $(pwd)/vim/key.vimrc ~/key.vimrc
-
+  ln -s $(pwd)/.tern-project ~/.tern-project # usually for YCM
 
 
   echo "Installing oh-my-zsh"

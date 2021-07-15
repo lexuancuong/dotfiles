@@ -13,7 +13,7 @@ Plug 'vim-airline/vim-airline-themes'
 " Autocompletion, formatting, linting & intellisense
 " Plug 'neoclide/coc.nvim', {'branch': 'release'} " IDE-like features
 " Plug 'neoclide/coc-prettier', { 'do': 'yarn install --frozen-lockfile' } -- Use it later
-Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer --all'} 
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --tern-completer --js-completer --all'} 
 Plug 'SirVer/ultisnips' " Snippets
 
 " File fuzzy searching
@@ -30,7 +30,7 @@ Plug 'scrooloose/nerdcommenter' " For easily commenting. multi types of file: .p
 Plug 'easymotion/vim-easymotion' " For quickly motion in Vim. Such as searching by AG,...
 Plug 'sheerun/vim-polyglot' " Adding Plug for new languges support
 Plug 'ervandew/supertab' " Use <Tab> for autocompletion in insert mode
-Plug 'mattn/let g:user_emmet_leader_key=','emmet-vim' " Makes writing HTML and CSS much easier
+" Plug 'mattn/let g:user_emmet_leader_key=','emmet-vim' " Makes writing HTML and CSS much easier
 Plug 'luochen1990/rainbow' " Use different colours for parenthesis levels
 Plug 'ekalinin/dockerfile.vim' " For DOckerfile
 Plug 'christoomey/vim-tmux-navigator' " Move between panes
@@ -41,8 +41,16 @@ Plug 'moll/vim-node'
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
+
+" For React highlights
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+
 " For HTML
 Plug 'alvan/vim-closetag'
+
+" For Markdown
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }, 'for': ['markdown', 'vim-plug']}
 
 call plug#end()
 
