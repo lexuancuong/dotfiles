@@ -1,11 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/Users/xuan-cuongle/.oh-my-zsh
 
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-ZSH_THEME="dracula"
+ZSH_THEME="agnoster"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -49,7 +45,7 @@ ZSH_THEME="dracula"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
+plugins=(git docker zsh-autosuggestions)
 
 # User configuration
 
@@ -84,17 +80,35 @@ export EDITOR='nvim'
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias vim="nvim"
+alias vi="nvim"
+
 alias reload='source ~/.zshrc'
 
 alias gsync="git checkout master && git fetch upstream && git rebase upstream/master && git push"
-alias glog='git log --graph --oneline --decorate --all'
-
-export PROMPT='${ret_status}%{$fg_bold[green]%}%p %{$fg[pink]%}%D{%T}%{$reset_color%} [$(whoami)] %{$fg_bold[blue]%}%c $(git_prompt_info)% %{$reset_color%}'
+alias gl='git log --graph --oneline --decorate --all'
 
 # Setting ag as the default source for fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
-export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 
-source ~/.zshrc.local
+# export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+export FZF_DEFAULT_OPTS="--height 40% --reverse --border --ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
+
+# For React Native
+# export android_home=$home/library/android/sdk
+# export path=$path:$android_home/emulator
+# export path=$path:$android_home/tools
+# export path=$path:$android_home/tools/bin
+# export path=$path:$android_home/platform-tools
+
+fd() {
+  # preview="git diff $@ --color=always -- {-1}"
+  # git diff $@ --name-only | fzf -m --ansi --preview $preview
+  git log --graph --color=always \
+      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+  fzf --ansi --no-sort --reverse --tiebreak=index --toggle-sort=\` \
+      --bind "ctrl-m:execute:
+                echo '{}' | grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R'"
+}

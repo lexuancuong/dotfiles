@@ -1,5 +1,5 @@
 # dotfiles
-A set of `vim/neovim`, `zsh`, `tmux`,`fzf`,..etc.. configuration files for Python and JS/TS Developer on LinuxOS.
+A set of `vim/neovim`, `zsh`, `oh-my-zsh`, `tmux`,`fzf`,..etc.. configuration files for Python and JS/TS Developer on LinuxOS.
 
 ![Screenshot](./assets/my-vim-screenshot.png)
 
@@ -33,6 +33,10 @@ You can customize your editor style in `./vimrc` file.
 If you have some problem with YCM after run the script, you can restart YCM server by this command:
 
     :YCMRestartServer
+
+(Optional) If you want to change color of blue background color, you can change line ... in `~/.oh-my-zsh/themes/agnoster.zsh-theme` to:
+
+    prompt_segment 39d $PRIMARY_FG ' %~ '
 
 Please raise some issues if you have a better plugin or approach for me.
 

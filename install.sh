@@ -1,5 +1,5 @@
 #!/bin/bash
-# Refrenced from https://github.com/codeaholicguy/dotfiles/blob/master/install.sh
+
 # Utils
 function is_installed {
   # set to 1 initially
@@ -28,8 +28,8 @@ function install_macos {
     brew cask install iterm2
   fi
 
-  if [ "$(is_installed zsh)" == "0" ]; then
-    echo "Installing zsh"
+  if [ "$(is_installed zsh-completions)" == "0" ]; then
+    echo "Installing zsh-completions"
     brew install zsh zsh-completions
   fi
 
@@ -41,6 +41,11 @@ function install_macos {
   if [ "$(is_installed fzf)" == "0" ]; then
     echo "Installing fzf"
     brew install fzf
+  fi
+
+  if [ "$(is_installed bat)" == "0" ]; then
+    echo "Installing bat - alternative for cat"
+    brew install bat
   fi
 
   if [ "$(is_installed tmux)" == "0" ]; then
@@ -72,28 +77,9 @@ function install_macos {
   $(brew --prefix)/opt/fzf/install --all
 }
 
-function backup {
-  echo "Backing up dotfiles"
-  local current_date=$(date +%s)
-  local backup_dir=dotfiles_$current_date
-
-  mkdir ~/$backup_dir
-
-  mv ~/.zshrc ~/$backup_dir/.zshrc
-  mv ~/.tmux.conf ~/$backup_dir/.tmux.conf
-  mv ~/.vim ~/$backup_dir/.vim
-  mv ~/.vimrc ~/$backup_dir/.vimrc
-  mv ~/general.vimrc ~/$backup_dir/general.vimrc
-  mv ~/key.vimrc ~/$backup_dir/key.vimrc
-  mv ~/plug_config.vimrc ~/$backup_dir/plug_config.vimrc
-  mv ~/plug_list.vimrc ~/$backup_dir/plug_list.vimrc
-
-}
-
 function link_dotfiles {
   echo "Linking dotfiles"
 
-  ln -s $(pwd)/zshrc ~/.zshrc
   ln -s $(pwd)/tmux.conf ~/.tmux.conf
   ln -s $(pwd)/vim ~/.vim
   ln -s $(pwd)/vimrc ~/.vimrc
@@ -101,21 +87,26 @@ function link_dotfiles {
   ln -s $(pwd)/vim/plug_list.vimrc ~/plug_list.vimrc
   ln -s $(pwd)/vim/plug_config.vimrc ~/plug_config.vimrc
   ln -s $(pwd)/vim/key.vimrc ~/key.vimrc
-  ln -s $(pwd)/.tern-project ~/.tern-project # usually for YCM
+  ln -s $(pwd)/.tern-project ~/.tern-project # use for YCM
 
 
   echo "Installing oh-my-zsh"
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
-  if [ ! -d "$ZSH/custom/plugins/zsh-autosuggestions" ]; then
+  if [ ! -d "$zsh/custom/plugins/zsh-autosuggestions" ]; then
     echo "Installing zsh-autosuggestions"
-    git clone git://github.com/zsh-users/zsh-autosuggestions $ZSH/custom/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
   fi
+
 
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
   rm -rf $HOME/.config/nvim/init.vim
   rm -rf $HOME/.config/nvim
+
+  rm -rf $HOME/.zshrc
+  ln -s $(pwd)/zshrc $HOME/.zshrc
+
   mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
   ln -s $(pwd)/vim $XDG_CONFIG_HOME/nvim
   ln -s $(pwd)/vimrc $XDG_CONFIG_HOME/nvim/init.vim
@@ -129,14 +120,9 @@ while test $# -gt 0; do
       ;;
     --macos)
       install_macos
-      backup
       link_dotfiles
       zsh
       source ~/.zshrc
-      exit
-      ;;
-    --backup)
-      backup
       exit
       ;;
     --dotfiles)
