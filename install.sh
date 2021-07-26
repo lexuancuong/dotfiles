@@ -94,22 +94,26 @@ function link_dotfiles {
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 
   if [ ! -d "$zsh/custom/plugins/zsh-autosuggestions" ]; then
-    echo "Installing zsh-autosuggestions"
+    echo "Installing zsh-autosuggestions for oh-my-zsh"
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
   fi
 
-
+  # Install plug for install plugin in vim
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+  # Link with global vim and execute all relative files
   rm -rf $HOME/.config/nvim/init.vim
   rm -rf $HOME/.config/nvim
-
   rm -rf $HOME/.zshrc
   ln -s $(pwd)/zshrc $HOME/.zshrc
-
   mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
   ln -s $(pwd)/vim $XDG_CONFIG_HOME/nvim
   ln -s $(pwd)/vimrc $XDG_CONFIG_HOME/nvim/init.vim
+  
+  # Use git diff split for easier looking
+  npm install -g git-split-diffs
+  git config --global core.pager "git-split-diffs --color | less -RFX"
+  git config split-diffs.theme-name dark
 }
 
 while test $# -gt 0; do 

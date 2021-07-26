@@ -45,6 +45,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
+
 plugins=(git docker zsh-autosuggestions)
 
 # User configuration
@@ -92,8 +93,8 @@ alias gl='git log --graph --oneline --decorate --all'
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
 
-# export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
-export FZF_DEFAULT_OPTS="--height 40% --reverse --border --ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
+export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+# export FZF_DEFAULT_OPTS="--height 40% --reverse --border --ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 
 # For React Native
 # export android_home=$home/library/android/sdk
@@ -102,13 +103,6 @@ export FZF_DEFAULT_OPTS="--height 40% --reverse --border --ansi --preview-window
 # export path=$path:$android_home/tools/bin
 # export path=$path:$android_home/platform-tools
 
-fd() {
-  # preview="git diff $@ --color=always -- {-1}"
-  # git diff $@ --name-only | fzf -m --ansi --preview $preview
-  git log --graph --color=always \
-      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
-  fzf --ansi --no-sort --reverse --tiebreak=index --toggle-sort=\` \
-      --bind "ctrl-m:execute:
-                echo '{}' | grep -o '[a-f0-9]\{7\}' | head -1 |
-                xargs -I % sh -c 'git show --color=always % | less -R'"
-}
+# If you put something that reload you zsh config in the end, an error of fzf will be occured
+# eval "$(rbenv init -)"
+# eval "$(jenv init -)"
