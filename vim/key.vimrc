@@ -4,8 +4,8 @@ nnoremap <SPACE> <Nop>
 let mapleader = "\<Space>"
 
 " Use tab with text block
-vmap <Tab> >gv
-vmap <S-Tab> <gv
+vmap > >gv
+vmap < <gv
 
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
