@@ -23,6 +23,7 @@ set autowrite     " Automatically :write before running commands
 
 set autoindent
 set smartindent
+" set newline 
 
 set autoread
 set autowrite
@@ -40,9 +41,14 @@ set expandtab
 set nojoinspaces
 
 " Numbers
-set relativenumber
+" set relativenumber
 set number
 set numberwidth=3
+set cursorline
+autocmd BufEnter * :highlight clear CursorLine
+
+" autocmd InsertEnter * highlight CursorLine guifg=white guibg=blue ctermfg=white ctermbg=blue
+" autocmd InsertLeave * highlight CursorLine guifg=white guibg=#e580ff ctermfg=white ctermbg=#e580ff
 
 " Open new split panes to right and bottom, which feels more natural
 set splitbelow
