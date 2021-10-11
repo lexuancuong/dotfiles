@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/xuan-cuongle/.oh-my-zsh
+export ZSH=/home/kane/.oh-my-zsh #TODO It is different, up to OS.
+#export ZSH=/home/kane/.oh-my-zsh #TODO It is different, up to OS.
 
 ZSH_THEME="agnoster"
 
