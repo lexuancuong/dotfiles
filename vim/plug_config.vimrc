@@ -43,7 +43,9 @@ let g:fzf_preview_window = 'right:60%'
 nnoremap K :Ag <C-R><C-W><CR>
 nnoremap <C-k> /<C-R><C-W><CR>
 nnoremap \ :Ag<SPACE>
-
+" Indent line
+let g:indentLine_color_term = 239
+let g:indentLine_char_list = ['|']
 
 " YCM
 nnoremap ? :YcmCompleter GetDoc<CR>

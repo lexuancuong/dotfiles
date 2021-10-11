@@ -8,6 +8,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin' " Mark file if it changed
 Plug 'dracula/vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'Yggdroot/indentLine' " Indent line like VSCode
 
 
 " Autocompletion, formatting, linting & intellisense
