@@ -47,7 +47,7 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git docker zsh-autosuggestions)
+plugins=(git docker zsh-autosuggestions poetry)
 
 # User configuration
 
@@ -109,6 +109,11 @@ export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 # export path=$path:$android_home/tools/bin
 # export path=$path:$android_home/platform-tools
 
+# For python packages
+export PATH=$HOME/.local/bin:$PATH
+
 # If you put something that reload you zsh config in the end, an error of fzf will be occured
 # eval "$(rbenv init -)"
 # eval "$(jenv init -)"
+
+export PATH="$HOME/.poetry/bin:$PATH"
