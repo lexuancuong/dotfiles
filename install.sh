@@ -12,6 +12,7 @@ function is_installed {
 
 function install_macos {
   if [[ $OSTYPE != darwin* ]]; then
+    echo "Couldn't run the MACOS installation for non type of MACOS machine."
     return
   fi
   echo "MacOS detected"
@@ -33,9 +34,9 @@ function install_macos {
     brew install zsh zsh-completions
   fi
 
-  if [ "$(is_installed ag)" == "0" ]; then
-    echo "Installing The silver searcher"
-    brew install the_silver_searcher
+  if [ "$(is_installed ripgrep)" == "0" ]; then
+    echo "Installing The Ripgrep"
+    brew install ripgrep
   fi
 
   if [ "$(is_installed fzf)" == "0" ]; then
@@ -74,6 +75,8 @@ function install_macos {
       pip3 install neovim --upgrade
     fi
   fi
+  echo "Install Rosetta 2 to speed up the Docker on M1 chipset"
+  softwareupdate --install-rosetta
   $(brew --prefix)/opt/fzf/install --all
 }
 

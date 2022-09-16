@@ -1,6 +1,6 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/kane/.oh-my-zsh #TODO It is different, up to OS.
 #export ZSH=/home/kane/.oh-my-zsh #TODO It is different, up to OS.
+export ZSH=/Users/lexuancuong/.oh-my-zsh #TODO It is different, up to OS.
 
 ZSH_THEME="agnoster"
 
@@ -47,7 +47,7 @@ ZSH_THEME="agnoster"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-plugins=(git docker zsh-autosuggestions poetry)
+plugins=(git docker zsh-autosuggestions poetry zsh-vi-mode)
 
 # User configuration
 
@@ -93,6 +93,7 @@ alias reload='source ~/.zshrc'
 
 alias gsync="git checkout master && git fetch upstream && git rebase upstream/master && git push"
 alias gl='git log --graph --oneline --decorate --all'
+alias lg='lazygit'
 
 # Setting ag as the default source for fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -115,5 +116,5 @@ export PATH=$HOME/.local/bin:$PATH
 # If you put something that reload you zsh config in the end, an error of fzf will be occured
 # eval "$(rbenv init -)"
 # eval "$(jenv init -)"
-
 export PATH="$HOME/.poetry/bin:$PATH"
+export PATH=/Users/lexuancuong/.poetry/bin:/Users/lexuancuong/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/opt/fzf/bin:/opt/homebrew/bin
