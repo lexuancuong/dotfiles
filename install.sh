@@ -163,39 +163,14 @@ function install_oh_my_zsh {
   fi
 
 }
-function install_git_diff {
-  # Use git diff split for easier looking
-  apt install nodejs npm
-  npm install -g git-split-diffs
-  git config --global core.pager "git-split-diffs --color | less -RFX"
-  git config split-diffs.theme-name dark
-}
 
 function link_dotfiles {
-  echo "Linking dotfiles"
-
-  ln -sf $(pwd)/tmux.conf ~/.tmux.conf
-  ln -sf $(pwd)/vim ~/.vim
-  ln -sf $(pwd)/vimrc ~/.vimrc
-  ln -sf $(pwd)/vim/general.vimrc ~/general.vimrc
-  ln -sf $(pwd)/vim/plug_list.vimrc ~/plug_list.vimrc
-  ln -sf $(pwd)/vim/plug_config.vimrc ~/plug_config.vimrc
-  ln -sf $(pwd)/vim/key.vimrc ~/key.vimrc
-  ln -sf $(pwd)/.tern-project ~/.tern-project # use for YCM
-
-  # Link with global vim and execute all relative files
-  rm -rf $HOME/.config/nvim/init.vim
-  rm -rf $HOME/.config/nvim
+  echo "Linking dotfiles..."
+  rm -rf $HOME/.tmux.conf
+  ln -sf $(pwd)/tmux.conf $HOME/.tmux.conf
   rm -rf $HOME/.zshrc
   ln -s $(pwd)/zshrc $HOME/.zshrc
-  mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
-  ln -s $(pwd)/vim $XDG_CONFIG_HOME/nvim
-  ln -s $(pwd)/vimrc $XDG_CONFIG_HOME/nvim/init.vim
-  
-  # Use git diff split for easier looking
-#  npm install -g git-split-diffs
-#  git config --global core.pager "git-split-diffs --color | less -RFX"
-#  git config split-diffs.theme-name dark
+  ln -s $(pwd)/p10k.zsh $HOME/.p10k.zsh
 }
 
 while test $# -gt 0; do 

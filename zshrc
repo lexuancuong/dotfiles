@@ -1,8 +1,16 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 # Path to your oh-my-zsh installation.
 #export ZSH=/home/kane/.oh-my-zsh #TODO It is different, up to OS.
 export ZSH=/Users/lexuancuong/.oh-my-zsh #TODO It is different, up to OS.
 
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -88,6 +96,7 @@ alias dc='dc-fn'
 
 alias vim="nvim"
 alias vi="nvim"
+alias python="python3"
 
 alias reload='source ~/.zshrc'
 
@@ -118,3 +127,9 @@ export PATH=$HOME/.local/bin:$PATH
 # eval "$(jenv init -)"
 export PATH="$HOME/.poetry/bin:$PATH"
 export PATH=/Users/lexuancuong/.poetry/bin:/Users/lexuancuong/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/opt/fzf/bin:/opt/homebrew/bin
+
+# FOR PYENV
+eval "$(pyenv init --path)"
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
