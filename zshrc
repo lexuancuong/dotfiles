@@ -122,6 +122,9 @@ export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 # For python packages
 export PATH=$HOME/.local/bin:$PATH
 
+# For Git GCP
+export GPG_TTY=$(tty)
+
 # If you put something that reload you zsh config in the end, an error of fzf will be occured
 # eval "$(rbenv init -)"
 # eval "$(jenv init -)"
@@ -133,3 +136,6 @@ eval "$(pyenv init --path)"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"

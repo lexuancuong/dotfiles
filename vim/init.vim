@@ -1,1 +1,0 @@
-/Users/xuan-cuongle/CUONG/MYSELF/SETUP/dotfiles/vimrc
