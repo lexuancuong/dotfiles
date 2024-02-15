@@ -63,6 +63,11 @@ function install_macos {
     brew install git
   fi
 
+  if [ "$(is_installed lazygit)" == "0" ]; then
+    echo "Installing LazyGit"
+    brew install lazygit
+  fi
+
   if [ "$(is_installed node)" == "0" ]; then
     echo "Installing Node"
     brew install node
@@ -171,9 +176,11 @@ function link_dotfiles {
   rm -rf $HOME/.zshrc
   ln -s $(pwd)/zshrc $HOME/.zshrc
   ln -s $(pwd)/p10k.zsh $HOME/.p10k.zsh
+  ln -sf $(pwd)/is_vim.sh $HOME/is_vim.sh
+  ln -sf $(pwd)/lazygit/config.yml $(lazygit --print-config-dir)
 }
 
-while test $# -gt 0; do 
+while test $# -gt 0; do
   case "$1" in
     --help)
       echo "Help"
