@@ -89,8 +89,8 @@ if [ "$(is_installed pyenv)" == "0" ]; then
   # Add pyenv to PATH (temporary for this session)
   export PYENV_ROOT="$HOME/.pyenv"
   if [ -e "$PYENV_ROOT" ] || [ -L "$PYENV_ROOT" ]; then
-    echo "   Removing existing Pyenv config at $target"
-    rm -f "$target"
+    echo "   Removing existing Pyenv config at $PYENV_ROOT"
+    rm -f "$PYENV_ROOT"
   fi
   # Install pyenv
   curl https://pyenv.run | bash
