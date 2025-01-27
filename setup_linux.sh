@@ -77,5 +77,23 @@ if [ "$(is_installed nvim)" == "0" ]; then
   fi
 fi
 
+if [ "$(is_installed pyenv)" == "0" ]; then
+  echo "Starting pyenv installation..."
+  # Install pyenv dependencies
+  apt-get install -y make build-essential libssl-dev zlib1g-dev \
+    libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
+    libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
+  
+  # Install pyenv
+  curl https://pyenv.run | bash
+  
+  # Add pyenv to PATH (temporary for this session)
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init --path)"
+  
+  echo "✓ pyenv installed successfully"
+fi
+
 source "configs/link_configs.sh"
 link_configs

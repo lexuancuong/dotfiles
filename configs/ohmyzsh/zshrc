@@ -168,10 +168,6 @@ fpath=($fpath ~/.zsh/completion)
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 
-# SWE k8s
-function swe {
-}
-
 export ANTHROPIC_API_KEY=""
 
 # NPM
