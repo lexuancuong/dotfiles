@@ -52,6 +52,12 @@ if [ "$(is_installed bat)" == "0" ]; then
   echo "✓ bat installed successfully"
 fi
 
+if [ "$(is_installed lazygit)" == "0" ]; then
+  echo "Starting lazygit installation..."
+  apt install lazygit -y
+  echo "✓ lazygit installed successfully"
+fi
+
 if [ "$(is_installed tmux)" == "0" ]; then
   echo "Starting tmux installation..."
   apt install tmux -y
