@@ -4,6 +4,15 @@ echo "Starting system update and upgrade..."
 apt-get update -y && apt-get upgrade -y
 echo "✓ System update and upgrade completed"
 
+function is_installed {
+  # set to 1 initially
+  local return_=1
+  # set to 0 if not found
+  type $1 >/dev/null 2>&1 || { local return_=0;  }
+  # return
+  echo "$return_"
+}
+
 echo "Starting installation of necessary utilities..."
 apt-get install -y \
   python3-dev \
@@ -26,7 +35,6 @@ apt-get install -y \
   curl \
   wget
 echo "✓ Base utilities installation completed"
-source "utils/is_install.sh"
 if [ "$(is_installed zsh-completions)" == "0" ]; then
   echo "Starting zsh-completions installation..."
   apt-get install zsh -y
