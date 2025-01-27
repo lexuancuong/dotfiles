@@ -85,7 +85,7 @@ function install_macos {
   $(brew --prefix)/opt/fzf/install --all
 }
 
-function install_ubuntu {
+function install_linux {
   echo "Ubuntu detected"
   sudo apt-get update -y && sudo apt-get upgrade -y
   echo "Install necessary utilities"

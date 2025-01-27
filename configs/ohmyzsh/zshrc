@@ -1,3 +1,5 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -128,8 +130,28 @@ export GPG_TTY=$(tty)
 # If you put something that reload you zsh config in the end, an error of fzf will be occured
 # eval "$(rbenv init -)"
 # eval "$(jenv init -)"
+
+# export PATH for Python development
+# Poetry
+# export PATH="$HOME/.poetry/bin:$PATH"
+# local bin
+# export PATH="$HOME/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
+# FZF
+# export PATH="/opt/homebrew/opt/fzf/bin:$PATH"
+# Pyenv
+# export PATH="$HOME/.pyenv/bin"
+
+# export PATH=/Users/lexuancuong/.poetry/bin:/Users/lexuancuong/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/opt/fzf/bin:/Users/lexuancuong/.pyenv/bin
 export PATH="$HOME/.poetry/bin:$PATH"
+# Pyenv
+export PATH="$HOME/.pyenv/bin:$PATH"
 export PATH=/Users/lexuancuong/.poetry/bin:/Users/lexuancuong/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/opt/fzf/bin:/opt/homebrew/bin
+
+# JRE
+export PATH="/opt/homebrew/opt/icu4c/bin:$PATH"
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+export JAVA_HOME="/opt/homebrew/opt/openjdk@17"
+export PATH="$PATH:/Users/lexuancuong/Library/Application Support/Coursier/bin"
 
 # FOR PYENV
 eval "$(pyenv init --path)"
@@ -139,3 +161,18 @@ eval "$(pyenv init --path)"
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+
+fpath=($fpath ~/.zsh/completion)
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+
+# SWE k8s
+function swe {
+}
+
+export ANTHROPIC_API_KEY=""
+
+# NPM
+export PATH=$HOME/.npm-global/bin:$PATH
