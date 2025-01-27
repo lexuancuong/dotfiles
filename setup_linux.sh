@@ -1,7 +1,7 @@
 ln -fs /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime
 export DEBIAN_FRONTEND=noninteractive
-apt-get update -y && apt-get upgrade -y
 echo "Starting system update and upgrade..."
+apt-get update -y && apt-get upgrade -y
 echo "✓ System update and upgrade completed"
 
 echo "Starting installation of necessary utilities..."
@@ -109,15 +109,8 @@ if [ "$(is_installed pyenv)" == "0" ]; then
   echo "✓ pyenv installed successfully"
 fi
 
-function install_oh_my_zsh {
-  echo "Installing oh-my-zsh"
-  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-  if [ ! -d "$zsh/custom/plugins/zsh-autosuggestions" ]; then
-    echo "Installing zsh-autosuggestions for oh-my-zsh"
-    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-  fi
-}
 echo "Installing oh-my-zsh..."
+source "configs/install_oh_my_zsh.sh"
 install_oh_my_zsh 
 
 source "configs/link_configs.sh"

@@ -1,19 +1,26 @@
 # Get the directory where this script is located
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
-# Configuration mapping: source -> target
-declare -A configs=(
-  ["tmux/tmux.conf"]="$HOME/.tmux.conf"
-  ["ohmyzsh/zshrc"]="$HOME/.zshrc"
-  ["p10k/p10k.zsh"]="$HOME/.p10k.zsh"
-  ["lazygit/config.yml"]="$(lazygit --print-config-dir)/config.yml"
-)
 
 function link_configs {
   echo "Starting configuration files linking process..."
   
-  for source in "${!configs[@]}"; do
-    target="${configs[$source]}"
+  # Define source and target pairs directly in arrays
+  sources=(
+    "tmux/tmux.conf"
+    "zsh/zshrc"
+    "lazygit/config.yml"
+  )
+  targets=(
+    "$HOME/.tmux.conf"
+    "$HOME/.zshrc"
+    "$(lazygit --print-config-dir)/config.yml"
+  )
+  
+  # Iterate over arrays using index
+  for i in "${!sources[@]}"; do
+    source="${sources[$i]}"
+    target="${targets[$i]}"
     echo "➜ Linking ${source%/*} configuration..."
     
     # Create target directory if it doesn't exist

@@ -1,0 +1,25 @@
+is_installed() {
+    command -v "$1" >/dev/null 2>&1
+}
+
+if ! is_installed pyenv; then
+    echo "📦 Installing pyenv and its dependencies..."
+    brew install openssl readline sqlite3 xz zlib tcl-tk
+    brew install pyenv
+    if is_installed pyenv; then
+        echo "✓ pyenv installed successfully"
+        echo "  Version: $(pyenv --version)"
+        
+        # Install latest Python version
+        echo "📦 Installing Python 3.11 via pyenv..."
+        pyenv install 3.11 --skip-existing
+        pyenv global 3.11
+        echo "✓ Python 3.11 installed and set as global"
+    else
+        echo "❌ Failed to install pyenv"
+        exit 1
+    fi
+else
+    echo "✓ pyenv is already installed"
+    echo "  Version: $(pyenv --version)"
+fi
