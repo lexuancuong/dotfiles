@@ -119,9 +119,7 @@ function install_oh_my_zsh {
 }
 echo "Installing oh-my-zsh..."
 install_oh_my_zsh 
-echo "Switching to zsh...."
-exec zsh
-echo "Switched to zsh..."
+
 source "configs/link_configs.sh"
 echo "Starting configuration files linking process..."
 link_configs
