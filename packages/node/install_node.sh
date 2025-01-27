@@ -1,7 +1,3 @@
-is_installed() {
-    command -v "$1" >/dev/null 2>&1
-}
-
 if ! is_installed node; then
     echo "📦 Installing Node..."
     brew install node
@@ -13,7 +9,6 @@ if ! is_installed node; then
         exit 1
     fi
 else
-    echo "✓ Node.js is already installed"
-    echo "  Version: $(node --version)"
+  print_package_version node
 fi
 

@@ -12,17 +12,17 @@ install_rosetta() {
     /usr/sbin/softwareupdate --install-rosetta --agree-to-license
 
     if [ $? -eq 0 ]; then
-        echo "Rosetta 2 installation completed successfully."
+        echo " Rosetta 2 installation completed successfully."
     else
-        echo "Failed to install Rosetta 2. Please try manually."
+        echo " Failed to install Rosetta 2. Please try manually."
         exit 1
     fi
 }
 
 if check_rosetta; then
-    echo "✓ Rosetta 2 is already installed"
+    printf " ${GREEN}✓${NC} Rosetta 2 is already installed\n"
 else
-    echo "Rosetta 2 is not installed. Installing..."
+    printf " Rosetta 2 is not installed. Installing..."
     install_rosetta
-    echo "✓ Rosetta 2 has been installed"
+    printf " ${GREEN}✓${NC} Rosetta 2 has been installed\n"
 fi

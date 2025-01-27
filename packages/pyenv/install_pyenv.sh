@@ -1,7 +1,3 @@
-is_installed() {
-    command -v "$1" >/dev/null 2>&1
-}
-
 if ! is_installed pyenv; then
     echo "📦 Installing pyenv and its dependencies..."
     brew install openssl readline sqlite3 xz zlib tcl-tk
@@ -20,6 +16,5 @@ if ! is_installed pyenv; then
         exit 1
     fi
 else
-    echo "✓ pyenv is already installed"
-    echo "  Version: $(pyenv --version)"
+  print_package_version pyenv
 fi

@@ -1,11 +1,7 @@
-is_installed() {
-    command -v "$1" >/dev/null 2>&1
-}
 if [ "$(is_installed rg)" == "0" ]; then
-  echo "Installing The Ripgrep"
+  echo " Installing Ripgrep"
   brew install ripgrep
-else
-    echo "✓ Ripgrep is already installed"
-    echo "  Version: $(rg --version)"
 fi
+
+print_package_version rg
 

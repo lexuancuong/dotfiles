@@ -10,19 +10,19 @@ check_xcode() {
 
 install_xcode() {
     xcode-select --install
-    echo "Please complete the installation manually if prompted."
+    echo " Please complete the installation manually if prompted."
     until xcode-select --print-path &>/dev/null; do
-        echo "Waiting for Xcode command line tools installation to complete..."
+        echo " Waiting for Xcode command line tools installation to complete..."
         sleep 10
     done
 
 }
 
 if check_xcode; then
-    echo "✓ Xcode command line tools are already installed."
+    printf " ${GREEN}✓${NC} Xcode command line tools are already installed.\n"
 else
-    echo "Xcode command line tools are not installed. Installing..."
+    echo " Xcode command line tools are not installed. Installing..."
     install_xcode
-    echo "✓ Xcode command line tools installation completed."
+    printf " ${GREEN}✓${NC} Xcode command line tools have been installed.\n"
 fi
 
