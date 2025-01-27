@@ -76,3 +76,5 @@ if [ "$(is_installed nvim)" == "0" ]; then
     echo "✓ Neovim Python provider installed successfully"
   fi
 fi
+
+source "configs/link_configs.sh"
