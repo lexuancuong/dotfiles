@@ -108,6 +108,9 @@ function install_oh_my_zsh {
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
   fi
 }
+echo "Installing oh-my-zsh..."
+install_oh_my_zsh 
 
 source "configs/link_configs.sh"
+echo "Starting configuration files linking process..."
 link_configs
