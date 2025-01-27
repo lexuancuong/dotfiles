@@ -24,7 +24,7 @@ apt-get install -y \
   curl \
   wget
 echo "✓ Base utilities installation completed"
-
+source "utils/is_install.sh"
 if [ "$(is_installed zsh-completions)" == "0" ]; then
   echo "Starting zsh-completions installation..."
   apt-get install zsh
