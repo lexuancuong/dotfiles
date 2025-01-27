@@ -4,15 +4,9 @@ set -e
 echo "======================================"
 echo "🚀 Starting MacOS Development Setup..."
 echo "======================================"
-export DEBIAN_FRONTEND=noninteractive
-# xcode-select --install # NOTE check it
 
-# if [ $TERM_PROGRAM != "iTerm.app" ]; then
-#   echo "Installing iTerm2"
-#   brew tap caskroom/cask
-#   brew cask install iterm2
-# fi
-
+source "packages/xcode/install_xcode.sh"
+source "packages/iterm2/install_iterm2.sh"
 source "packages/brew/install_brew.sh"
 source "packages/fzf/install_fzf.sh"
 source "packages/bat/install_bat.sh"
@@ -24,10 +18,7 @@ source "packages/pyenv/install_pyenv.sh"
 source "packages/node/install_node.sh"
 source "packages/neovim/install_neovim.sh"
 source "packages/zsh/install_zsh.sh"
-
-
-# echo "Install Rosetta 2 to speed up the Docker on M1 chipset"
-# softwareupdate --install-rosetta
+source "packages/rosetta/install_rosetta.sh"
 
 
 echo "======================================"
