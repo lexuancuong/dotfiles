@@ -8,8 +8,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Path to your oh-my-zsh installation.
-#export ZSH=/home/kane/.oh-my-zsh #TODO It is different, up to OS.
-export ZSH=/Users/lexuancuong/.oh-my-zsh #TODO It is different, up to OS.
+export ZSH="$HOME/.oh-my-zsh"
 
 # ZSH_THEME="agnoster"
 ZSH_THEME="powerlevel10k/powerlevel10k"
@@ -146,6 +145,8 @@ export PATH="$HOME/.poetry/bin:$PATH"
 # Pyenv
 export PATH="$HOME/.pyenv/bin:$PATH"
 export PATH=/Users/lexuancuong/.poetry/bin:/Users/lexuancuong/.local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/homebrew/opt/fzf/bin:/opt/homebrew/bin
+# Base PATH
+export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
 
 # JRE
 export PATH="/opt/homebrew/opt/icu4c/bin:$PATH"
