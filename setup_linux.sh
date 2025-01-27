@@ -1,3 +1,5 @@
+ln -fs /usr/share/zoneinfo/Asia/Ho_Chi_Minh /etc/localtime
+export DEBIAN_FRONTEND=noninteractive
 apt-get update -y && apt-get upgrade -y
 echo "Starting system update and upgrade..."
 echo "✓ System update and upgrade completed"
@@ -84,11 +86,14 @@ if [ "$(is_installed pyenv)" == "0" ]; then
     libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm \
     libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
   
-  # Install pyenv
-  curl https://pyenv.run | bash
-  
   # Add pyenv to PATH (temporary for this session)
   export PYENV_ROOT="$HOME/.pyenv"
+  if [ -e "$PYENV_ROOT" ] || [ -L "$PYENV_ROOT" ]; then
+    echo "   Removing existing Pyenv config at $target"
+    rm -f "$target"
+  fi
+  # Install pyenv
+  curl https://pyenv.run | bash
   export PATH="$PYENV_ROOT/bin:$PATH"
   eval "$(pyenv init --path)"
   

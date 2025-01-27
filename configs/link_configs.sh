@@ -19,6 +19,12 @@ function link_configs {
     # Create target directory if it doesn't exist
     mkdir -p "$(dirname "$target")"
     
+    # Remove existing file or symlink if it exists
+    if [ -e "$target" ] || [ -L "$target" ]; then
+      echo "   Removing existing config at $target"
+      rm -f "$target"
+    fi
+
     # Create symbolic link (will override existing ones)
     ln -sf "$SCRIPT_DIR/$source" "$target"
     echo "✓ Done"
