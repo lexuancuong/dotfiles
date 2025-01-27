@@ -1,9 +1,9 @@
-sudo apt-get update -y && sudo apt-get upgrade -y
+apt-get update -y && apt-get upgrade -y
 echo "Starting system update and upgrade..."
 echo "✓ System update and upgrade completed"
 
 echo "Starting installation of necessary utilities..."
-sudo apt-get install -y \
+apt-get install -y \
   python3-dev \
   git \
   libncurses5-dev \
@@ -27,13 +27,13 @@ echo "✓ Base utilities installation completed"
 
 if [ "$(is_installed zsh-completions)" == "0" ]; then
   echo "Starting zsh-completions installation..."
-  sudo apt-get install zsh
+  apt-get install zsh
   echo "✓ zsh-completions installed successfully"
 fi
 
 if [ "$(is_installed ag)" == "0" ]; then
   echo "Starting The Silver Searcher (ag) installation..."
-  sudo apt install silversearcher-ag
+  apt install silversearcher-ag
   echo "✓ The Silver Searcher (ag) installed successfully"
 fi
 
@@ -46,13 +46,13 @@ fi
 
 if [ "$(is_installed bat)" == "0" ]; then
   echo "Starting bat installation (alternative for cat)..."
-  sudo apt install bat
+  apt install bat
   echo "✓ bat installed successfully"
 fi
 
 if [ "$(is_installed tmux)" == "0" ]; then
   echo "Starting tmux installation..."
-  sudo apt install tmux
+  apt install tmux
   echo "✓ tmux installed successfully"
   echo "Starting tmux-plugin-manager installation..."
   git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
@@ -61,14 +61,14 @@ fi
 
 if [ "$(is_installed git)" == "0" ]; then
   echo "Starting Git installation..."
-  sudo apt install git
+  apt install git
   echo "✓ Git installed successfully"
 fi
 
 if [ "$(is_installed nvim)" == "0" ]; then
   echo "Starting Neovim installation..."
-  sudo add-apt-repository ppa:neovim-ppa/unstable
-  sudo apt-get install neovim
+  add-apt-repository ppa:neovim-ppa/unstable
+  apt-get install neovim
   echo "✓ Neovim installed successfully"
   if [ "$(is_installed pip3)" == "1" ]; then
     echo "Starting Neovim Python provider installation..."
