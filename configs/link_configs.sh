@@ -3,6 +3,8 @@ function link_configs {
   
   # TMUX configuration
   echo "➜ Linking tmux configuration..."
+  echo "   📁 Source: $(pwd)/tmux/tmux.conf"
+  echo "   📁 Target: $HOME/.tmux.conf"
   if [ -f "$HOME/.tmux.conf" ]; then
     echo "   ⚠️  Removing existing tmux config at $HOME/.tmux.conf"
     rm -rf $HOME/.tmux.conf
@@ -12,6 +14,8 @@ function link_configs {
 
   # ZSH configuration
   echo "➜ Linking zsh configuration..."
+  echo "   📁 Source: $(pwd)/ohmyzsh/zshrc"
+  echo "   📁 Target: $HOME/.zshrc"
   if [ -f "$HOME/.zshrc" ]; then
     echo "   ⚠️  Removing existing zshrc at $HOME/.zshrc"
     rm -rf $HOME/.zshrc
@@ -21,6 +25,8 @@ function link_configs {
 
   # P10K configuration
   echo "➜ Linking p10k configuration..."
+  echo "   📁 Source: $(pwd)/p10k/p10k.zsh"
+  echo "   📁 Target: $HOME/.p10k.zsh"
   if [ -f "$HOME/.p10k.zsh" ]; then
     echo "   ⚠️  Removing existing p10k config at $HOME/.p10k.zsh"
     rm -rf $HOME/.p10k.zsh
@@ -30,7 +36,9 @@ function link_configs {
 
   # Lazygit configuration
   echo "➜ Linking lazygit configuration..."
+  echo "   📁 Source: $(pwd)/lazygit/config.yml"
   LAZYGIT_CONFIG_DIR=$(lazygit --print-config-dir)
+  echo "   📁 Target: $LAZYGIT_CONFIG_DIR/config.yml"
   if [ -f "$LAZYGIT_CONFIG_DIR/config.yml" ]; then
     echo "   ⚠️  Removing existing lazygit config at $LAZYGIT_CONFIG_DIR/config.yml"
     rm -rf "$LAZYGIT_CONFIG_DIR/config.yml"

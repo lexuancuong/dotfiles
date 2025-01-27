@@ -78,3 +78,4 @@ if [ "$(is_installed nvim)" == "0" ]; then
 fi
 
 source "configs/link_configs.sh"
+link_configs
