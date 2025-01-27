@@ -105,8 +105,8 @@ export PATH="/opt/homebrew/opt/icu4c/bin:$PATH"
 # Homebrew
 export PATH="/opt/homebrew/bin:$PATH"
 eval "$(pyenv init --path)"
+# Postgresql
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
-export PATH=$HOME/.npm-global/bin:$PATH
 
 # =============================================================================
 #                                   Functions
