@@ -5,7 +5,6 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 declare -A configs=(
   ["tmux/tmux.conf"]="$HOME/.tmux.conf"
   ["ohmyzsh/zshrc"]="$HOME/.zshrc"
-  ["ohmyzsh/oh-my-zsh.sh"]="$HOME/.oh-my-zsh/oh-my-zsh.sh"
   ["p10k/p10k.zsh"]="$HOME/.p10k.zsh"
   ["lazygit/config.yml"]="$(lazygit --print-config-dir)/config.yml"
 )
