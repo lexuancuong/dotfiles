@@ -56,7 +56,9 @@ export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
-export ANTHROPIC_API_KEY=""
+
+# Load sensitive environment variables from .zsh_secrets if it exists
+[[ -f ~/.zsh_secrets ]] && source ~/.zsh_secrets
 
 # =============================================================================
 #                                   Aliases
