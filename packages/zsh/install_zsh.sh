@@ -27,9 +27,6 @@ fi
 print_package_version zsh
 
 ZSH_SETUP_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-SECRET_FILE="$ZSH_SETUP_DIR/zsh_secrets"
-SYSTEM_SECRET_FILE="$HOME/.zshrc_secrets"
-create_symlink $SECRET_FILE $SYSTEM_SECRET_FILE
 
 CUSTOM_P10K_FILE="$ZSH_SETUP_DIR/p10k.zsh"
 SYSTEM_P10K_FILE="$HOME/.p10k.zsh"
