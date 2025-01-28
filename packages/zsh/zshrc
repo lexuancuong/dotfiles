@@ -109,6 +109,7 @@ export PATH="/opt/homebrew/bin:$PATH"
 eval "$(pyenv init --path)"
 # Postgresql
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
+export PATH="/opt/homebrew/opt/npm/bin:$PATH"
 
 # =============================================================================
 #                                   Functions
