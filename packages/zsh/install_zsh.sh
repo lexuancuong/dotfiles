@@ -1,4 +1,4 @@
-function install_oh_my_zsh {
+function install_ohmyzsh {
   if [ -d "$HOME/.oh-my-zsh" ]; then
     echo " ${GREEN}✓${NC} oh-my-zsh is already installed"
   else
@@ -19,19 +19,19 @@ function install_oh_my_zsh {
 
 if ! is_installed zsh; then
   brew install zsh
-  brew install powerlevel10k
-  brew install zsh-autosuggestions
-  brew install zsh-completions
-  brew install zsh-syntax-highlighting
 fi
 print_package_version zsh
+echo "  ${GREEN} Install zsh plugins..."
+brew install zsh-autosuggestions
+brew install zsh-completions
+brew install zsh-syntax-highlighting
+brew install zsh-vi-mode
+install_ohmyzsh
+if ! is_installed oh-my-posh; then
+  brew install jandedobbeleer/oh-my-posh/oh-my-posh
+fi
 
 ZSH_SETUP_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-CUSTOM_P10K_FILE="$ZSH_SETUP_DIR/p10k.zsh"
-SYSTEM_P10K_FILE="$HOME/.p10k.zsh"
-create_symlink $CUSTOM_P10K_FILE $SYSTEM_P10K_FILE
-
 CUSTOM_ZSH_FILE="$ZSH_SETUP_DIR/zshrc"
 SYSTEM_ZSH_FILE="$HOME/.zshrc"
 create_symlink $CUSTOM_ZSH_FILE $SYSTEM_ZSH_FILE

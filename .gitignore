@@ -3,3 +3,5 @@
 vim/bundle/*
 vim/autoload/*
 .DS_Store
+tmux-client*.log
+tmux-server*.log
