@@ -1,5 +1,5 @@
-if [ "$(is_installed rg)" == "0" ]; then
-  echo " Installing Ripgrep"
+if ! is_installed rg; then
+  echo "📦  Installing Ripgrep"
   brew install ripgrep
 fi
 
