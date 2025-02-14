@@ -4,6 +4,7 @@ set -e
 source "utils/colors.sh"
 source "utils/create_symlimk.sh"
 source "utils/is_installed.sh"
+source "utils/did_brew_install.sh"
 source "utils/print_package_version.sh"
 
 echo "======================================"
@@ -26,6 +27,7 @@ source "packages/npm/install_npm.sh"
 source "packages/neovim/install_neovim.sh"
 source "packages/zsh/install_zsh.sh"
 source "packages/rosetta/install_rosetta.sh"
+source "packages/maccy/install_maccy.sh"
 
 
 echo "======================================"
