@@ -99,6 +99,8 @@ eval "$(pyenv init --path)"
 export PATH="/opt/homebrew/opt/postgresql@15/bin:$PATH"
 export PATH="/opt/homebrew/opt/npm/bin:$PATH"
 
+# Zoxide
+eval "$(zoxide init zsh)"
 # =============================================================================
 #                                   Functions
 # =============================================================================
