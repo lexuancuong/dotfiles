@@ -31,6 +31,7 @@ source "packages/maccy/install_maccy.sh"
 source "packages/zoxide/install_zoxide.sh"
 source "packages/postman/install_postman.sh"
 source "packages/ngrok/install_ngrok.sh"
+source "packages/yazi/install_yazi.sh"
 
 
 echo "======================================"
