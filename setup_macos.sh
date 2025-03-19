@@ -28,6 +28,9 @@ source "packages/neovim/install_neovim.sh"
 source "packages/zsh/install_zsh.sh"
 source "packages/rosetta/install_rosetta.sh"
 source "packages/maccy/install_maccy.sh"
+source "packages/zoxide/install_zoxide.sh"
+source "packages/postman/install_postman.sh"
+source "packages/ngrok/install_ngrok.sh"
 
 
 echo "======================================"
