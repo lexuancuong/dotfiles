@@ -1,4 +1,4 @@
-if ! did_brew_install "yazi" ; then
+if ! did_brew_install yazi; then
   echo "📦  Installing yazi"
   brew install yazi
 fi
