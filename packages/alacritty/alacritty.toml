@@ -1,0 +1,99 @@
+# iTerm2-like Alacritty Configuration
+# Mimicking iTerm2's look and feel with Tokyo Night Storm theme
+
+[window]
+dimensions = { columns = 120, lines = 40 }
+padding = { x = 8, y = 8 }
+decorations = "full"  # iTerm2-style title bar with buttons
+opacity = 0.97       # Less transparent like iTerm2 default
+blur = true
+startup_mode = "Maximized"
+dynamic_padding = true  # Adjust padding like iTerm2
+
+[font]
+size = 13.9          # Rounder number like iTerm2 default
+builtin_box_drawing = true
+offset = { x = 0, y = 1 }  # Slight vertical offset for better spacing
+
+[font.normal]
+family = "FiraCode Nerd Font"
+style = "Regular"
+
+[font.bold]
+family = "FiraCode Nerd Font"
+style = "Bold"
+
+[font.italic]
+family = "FiraCode Nerd Font"
+style = "Italic"
+
+[font.bold_italic]
+family = "FiraCode Nerd Font"
+style = "Bold Italic"
+
+# iTerm2-style Tokyo Night Storm Theme
+[colors.primary]
+background = "#1a1b26"  # Darker background like iTerm2
+foreground = "#c0caf5"
+dim_foreground = "#a9b1d6"
+
+[colors.cursor]
+text = "#24283b"
+cursor = "#c0caf5"
+
+[colors.selection]
+text = "CellForeground"
+background = "#364a82"
+
+[colors.normal]
+black   = "#15161e"
+red     = "#f7768e"
+green   = "#9ece6a"
+yellow  = "#e0af68"
+blue    = "#7aa2f7"
+magenta = "#bb9af7"
+cyan    = "#7dcfff"
+white   = "#a9b1d6"
+
+[colors.bright]
+black   = "#414868"
+red     = "#f7768e"
+green   = "#9ece6a"
+yellow  = "#e0af68"
+blue    = "#7aa2f7"
+magenta = "#bb9af7"
+cyan    = "#7dcfff"
+white   = "#c0caf5"
+
+[colors.dim]
+black   = "#32344a"
+red     = "#f7768e"
+green   = "#9ece6a"
+yellow  = "#e0af68"
+blue    = "#7aa2f7"
+magenta = "#bb9af7"
+cyan    = "#7dcfff"
+white   = "#9aa5ce"
+
+# Search highlighting
+[colors.search.matches]
+foreground = "#24283b"
+background = "#7dcfff"
+
+[colors.search.focused_match]
+foreground = "#24283b"
+background = "#ff9e64"
+
+# Footer bar for search
+[colors.footer_bar]
+foreground = "#c0caf5"
+background = "#1a1b26"
+
+# Hints for URL/path highlighting
+[colors.hints.start]
+foreground = "#1a1b26"
+background = "#e0af68"
+
+[colors.hints.end]
+foreground = "#1a1b26"
+background = "#7aa2f7"

@@ -1,4 +1,4 @@
-if ! did_brew_install "postman"; then
+if ! did_app_install "postman"; then
   echo -e "${GREEN} Install Postman..."
   brew install --cask postman
 fi

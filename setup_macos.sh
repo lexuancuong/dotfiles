@@ -5,6 +5,7 @@ source "utils/colors.sh"
 source "utils/create_symlimk.sh"
 source "utils/is_installed.sh"
 source "utils/did_brew_install.sh"
+source "utils/did_app_install.sh"
 source "utils/print_package_version.sh"
 
 echo "======================================"
@@ -33,6 +34,7 @@ source "packages/postman/install_postman.sh"
 source "packages/ngrok/install_ngrok.sh"
 source "packages/yazi/install_yazi.sh"
 source "packages/uv/install_uv.sh"
+source "packages/alacritty/install_alacritty.sh"
 
 
 echo "======================================"
