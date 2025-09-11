@@ -13,7 +13,7 @@ dynamic_padding = true  # Adjust padding like iTerm2
 [font]
 size = 13.9          # Rounder number like iTerm2 default
 builtin_box_drawing = true
-offset = { x = 0, y = 1 }  # Slight vertical offset for better spacing
+offset = { x = 0, y = 3 }  # Slight vertical offset for better spacing
 
 [font.normal]
 family = "FiraCode Nerd Font"
