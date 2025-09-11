@@ -54,7 +54,7 @@ export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
 # =============================================================================
 
 # Docker
-alias dc='docker-compose'
+alias dc='docker compose'
 
 # Neovim
 alias vim="nvim"
@@ -106,3 +106,8 @@ eval "$(zoxide init zsh)"
 # =============================================================================
 #                                   Functions
 # =============================================================================
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/lexuancuong/.docker/completions $fpath)
+autoload -Uz compinit
+compinit
+# End of Docker CLI completions
