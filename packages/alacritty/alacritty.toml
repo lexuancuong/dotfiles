@@ -5,19 +5,19 @@
 dimensions = { columns = 120, lines = 40 }
 padding = { x = 8, y = 8 }
 decorations = "full"  # iTerm2-style title bar with buttons
-opacity = 0.97       # Less transparent like iTerm2 default
+opacity = 0.7       # Less transparent like iTerm2 default
 blur = true
 startup_mode = "Maximized"
 dynamic_padding = true  # Adjust padding like iTerm2
 
 [font]
 size = 13.9          # Rounder number like iTerm2 default
-builtin_box_drawing = true
+builtin_box_drawing = false
 offset = { x = 0, y = 3 }  # Slight vertical offset for better spacing
 
 [font.normal]
 family = "FiraCode Nerd Font"
-style = "Regular"
+style = "Retina"
 
 [font.bold]
 family = "FiraCode Nerd Font"
