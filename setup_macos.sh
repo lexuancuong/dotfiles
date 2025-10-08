@@ -35,6 +35,7 @@ source "packages/ngrok/install_ngrok.sh"
 source "packages/yazi/install_yazi.sh"
 source "packages/uv/install_uv.sh"
 source "packages/alacritty/install_alacritty.sh"
+source "packages/alacritty/install_karabiner.sh"
 
 
 echo "======================================"
