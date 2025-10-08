@@ -8,7 +8,8 @@ Personal development environment configuration managed with Nix and Dotbot.
 - **Nushell**: Modern shell with vi mode, replacing zsh
 - **Starship**: Cross-shell prompt theme
 - **Dotbot**: Automated symlink management
-- **macOS Integration**: Homebrew for GUI applications
+- **nix-darwin**: Declarative macOS system configuration
+- **Portable**: Works on any macOS machine without hardcoded usernames/hostnames
 
 ## 📦 Included Tools
 
@@ -51,10 +52,12 @@ Personal development environment configuration managed with Nix and Dotbot.
    ```
 
    This will:
+   - Automatically detect your username and hostname
    - Install Homebrew (if needed)
    - Install GUI applications (WezTerm, Alacritty, Maccy, Postman, ngrok)
    - Apply macOS system settings (dock, finder, keyboard, etc.)
    - Set up fonts
+   - Configure nushell as your shell
 
    **Note:** First-time setup may take a while and will ask for sudo password.
 
@@ -144,6 +147,10 @@ git config --global user.signingkey "YOUR_GPG_KEY"
 ### Terminal
 - **WezTerm**: Edit `wezterm/wezterm.lua`
 - **Alacritty**: Edit `alacritty/alacritty.toml`
+
+### macOS System Settings
+- Edit `darwin/default.nix` to customize system preferences
+- Changes apply automatically when you run `make darwin-switch`
 
 ### Adding New Packages
 

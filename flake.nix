@@ -11,45 +11,9 @@
     let
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
-      user = "cuongle";
-      hostname = "lexuancuong-mbp";
-    in
-    {
-      # Simple package profile for CLI tools
-      packages.${system} = {
-        myProfile = pkgs.buildEnv {
-          name = "my-profile";
-          paths = with pkgs; [
-            # Core CLI tools
-            git
-            neovim
-            nushell
-            tmux
-            fzf
-            bat
-            ripgrep
 
-            # Dev tools
-            lazygit
-            delta
-            zoxide
-            yazi
-            pyenv
-            nodejs
-            python3
-            uv
-
-            # Theme
-            starship
-
-            # Note: Terminal GUI apps (wezterm, alacritty) managed via Homebrew in darwin config
-          ];
-        };
-        default = self.packages.${system}.myProfile;
-      };
-
-      # nix-darwin configuration for macOS system settings and GUI apps
-      darwinConfigurations.${hostname} = darwin.lib.darwinSystem {
+      # Helper function to create darwin configuration for any user/hostname
+      mkDarwinConfiguration = { user, hostname }: darwin.lib.darwinSystem {
         inherit system;
         modules = [
           # Import our darwin configuration
@@ -90,6 +54,50 @@
             };
           })
         ];
+      };
+    in
+    {
+      # Simple package profile for CLI tools
+      packages.${system} = {
+        myProfile = pkgs.buildEnv {
+          name = "my-profile";
+          paths = with pkgs; [
+            # Core CLI tools
+            git
+            neovim
+            nushell
+            tmux
+            fzf
+            bat
+            ripgrep
+
+            # Dev tools
+            lazygit
+            delta
+            zoxide
+            yazi
+            pyenv
+            nodejs
+            python3
+            uv
+
+            # Theme
+            starship
+
+            # Note: Terminal GUI apps (wezterm, alacritty) managed via Homebrew in darwin config
+          ];
+        };
+        default = self.packages.${system}.myProfile;
+      };
+
+      # nix-darwin configurations for different machines
+      # You can add your own configuration here or use the default
+      darwinConfigurations = {
+        # Default configuration - uses current user and hostname
+        default = mkDarwinConfiguration {
+          user = builtins.getEnv "USER";
+          hostname = builtins.getEnv "HOSTNAME";
+        };
       };
     };
 }

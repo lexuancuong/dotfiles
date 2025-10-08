@@ -21,13 +21,13 @@ upgrade: update ## Update and upgrade Nix profile packages
 	nix profile upgrade '.*'
 
 darwin-setup: ## First-time nix-darwin setup (installs GUI apps and system settings)
-	nix run nix-darwin -- switch --flake .#lexuancuong-mbp
+	nix run nix-darwin -- switch --flake .#default
 
 darwin-switch: ## Apply darwin configuration changes (after first setup)
-	darwin-rebuild switch --flake .#lexuancuong-mbp
+	darwin-rebuild switch --flake .#default
 
 darwin-build: ## Build darwin configuration without applying
-	darwin-rebuild build --flake .#lexuancuong-mbp
+	darwin-rebuild build --flake .#default
 
 clean: ## Clean Nix build artifacts
 	rm -rf result
