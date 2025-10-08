@@ -11,8 +11,11 @@
     let
       system = "aarch64-darwin";
       pkgs = nixpkgs.legacyPackages.${system};
+      user = "cuongle";
+      hostname = "lexuancuong-mbp";
     in
     {
+      # Simple package profile for CLI tools
       packages.${system} = {
         myProfile = pkgs.buildEnv {
           name = "my-profile";
@@ -39,35 +42,53 @@
             # Theme
             starship
 
-            # Terminals
-            alacritty
-            wezterm
+            # Note: Terminal GUI apps (wezterm, alacritty) managed via Homebrew in darwin config
           ];
         };
         default = self.packages.${system}.myProfile;
       };
 
-      # nix-darwin configuration for macOS-specific apps
-      darwinConfigurations.lexuancuong-mbp = darwin.lib.darwinSystem {
+      # nix-darwin configuration for macOS system settings and GUI apps
+      darwinConfigurations.${hostname} = darwin.lib.darwinSystem {
         inherit system;
         modules = [
-          {
-            # Homebrew for macOS-specific apps
-            homebrew = {
-              enable = true;
-              casks = [
-                "maccy"          # Clipboard manager
-                "postman"        # API testing
-                "ngrok"          # Tunneling
-              ];
+          # Import our darwin configuration
+          ./darwin
+
+          # User and system configuration
+          ({ pkgs, ... }: {
+            # Allow unfree packages (needed for some Homebrew casks)
+            nixpkgs.config.allowUnfree = true;
+
+            # System configuration
+            system = {
+              stateVersion = 5;
+              configurationRevision = self.rev or self.dirtyRev or null;
             };
 
-            # System settings
-            system.defaults = {
-              dock.autohide = true;
-              finder.AppleShowAllExtensions = true;
+            # User configuration
+            users.users.${user} = {
+              home = "/Users/${user}";
+              shell = pkgs.nushell;
             };
-          }
+
+            # Networking
+            networking = {
+              computerName = hostname;
+              hostName = hostname;
+              localHostName = hostname;
+            };
+
+            # Nix configuration
+            nix = {
+              package = pkgs.nix;
+              settings = {
+                experimental-features = [ "nix-command" "flakes" ];
+                warn-dirty = false;
+                auto-optimise-store = false; # Can cause issues on macOS
+              };
+            };
+          })
         ];
       };
     };
