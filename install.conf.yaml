@@ -1,0 +1,41 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- clean:
+    - '~'
+    - '~/.config'
+
+- link:
+    # Nushell
+    ~/.config/nushell/config.nu: nushell/config.nu
+    ~/.config/nushell/env.nu: nushell/env.nu
+
+    # Starship
+    ~/.config/starship.toml: starship/starship.toml
+
+    # Tmux
+    ~/.tmux.conf: tmux/tmux.conf
+
+    # Git
+    ~/.gitconfig: git/gitconfig
+
+    # Alacritty
+    ~/.config/alacritty/alacritty.toml: alacritty/alacritty.toml
+
+    # WezTerm
+    ~/.config/wezterm/wezterm.lua: wezterm/wezterm.lua
+
+    # Lazygit
+    ~/.config/lazygit/config.yml: lazygit/config.yml
+
+    # Yazi
+    ~/.config/yazi/yazi.toml: yazi/yazi.toml
+    ~/.config/yazi/theme.toml: yazi/theme.toml
+
+- shell:
+  - [mkdir -p ~/.config/{nushell,alacritty,wezterm,lazygit,yazi}, Creating config directories]
+  - [mkdir -p ~/.cache/starship, Creating starship cache directory]
+  - [starship init nu | save -f ~/.cache/starship/init.nu, Initialize Starship for Nushell]
+  - [zoxide init nushell | save -f ~/.zoxide.nu, Initialize Zoxide for Nushell]

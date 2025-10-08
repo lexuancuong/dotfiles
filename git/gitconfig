@@ -1,0 +1,16 @@
+[pull]
+	ff = only
+[user]
+	name = lexuancuong
+	email =
+	signingkey =
+[core]
+	autocrlf = false
+[commit]
+	gpgsign = true
+[gpg]
+	program = gpg
+[push]
+	gpgsign = false
+[log]
+	showSignature = true

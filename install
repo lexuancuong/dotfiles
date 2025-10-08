@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+set -e
+
+CONFIG="install.conf.yaml"
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+cd "${BASEDIR}"
+
+# Check if dotbot is installed, if not install it with pip
+if ! command -v dotbot &> /dev/null; then
+    echo "dotbot not found, installing via pip..."
+    pip3 install --user dotbot
+fi
+
+# Run dotbot
+dotbot -d "${BASEDIR}" -c "${CONFIG}" "${@}"
