@@ -37,8 +37,6 @@
 
     # Homebrew taps
     taps = [
-      "homebrew/bundle"
-      "homebrew/services"
     ];
   };
 }

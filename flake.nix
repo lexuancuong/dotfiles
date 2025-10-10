@@ -28,6 +28,7 @@
             system = {
               stateVersion = 5;
               configurationRevision = self.rev or self.dirtyRev or null;
+              primaryUser = user;
             };
 
             # User configuration
@@ -95,8 +96,8 @@
       darwinConfigurations = {
         # Default configuration - uses current user and hostname
         default = mkDarwinConfiguration {
-          user = builtins.getEnv "USER";
-          hostname = builtins.getEnv "HOSTNAME";
+          user = "cuongle";
+          hostname = "lexuancuong-2";
         };
       };
     };

@@ -8,18 +8,19 @@
     };
   };
 
-  programs = {
-    # Enable nushell system-wide
-    nushell.enable = true;
-  };
+  # programs = {
+  #   # Enable nushell system-wide
+  #   nushell.enable = true;
+  # };
 
   # Enable Touch ID for sudo
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   # Fonts
   fonts = {
     packages = with pkgs; [
-      (nerdfonts.override { fonts = [ "FiraCode" "JetBrainsMono" ]; })
+      nerd-fonts.fira-code
+      nerd-fonts.jetbrains-mono
     ];
   };
 
