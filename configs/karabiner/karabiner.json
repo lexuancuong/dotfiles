@@ -37,7 +37,7 @@
                 "to": [
                   {
                     "key_code": "spacebar",
-                    "modifiers": ["control"]
+                    "modifiers": ["left_command"]
                   }
                 ]
               }
