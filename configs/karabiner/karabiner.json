@@ -4,6 +4,26 @@
       "complex_modifications": {
         "rules": [
           {
+            "description": "Change input source with Command + Slash",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "slash",
+                  "modifiers": {
+                    "mandatory": ["command"]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "spacebar",
+                    "modifiers": ["control"]
+                  }
+                ]
+              }
+            ]
+          },
+          {
             "description": "Change command + h/j/k/l to Arrows",
             "manipulators": [
               {
