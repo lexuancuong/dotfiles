@@ -23,6 +23,8 @@ brew "git"
 brew "fzf"
 brew "git-delta"
 brew "bat"
+brew "dotbot"
+brew "gnupg"
 
 # ----------------------------
 # 3. Applications (Casks)

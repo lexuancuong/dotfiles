@@ -1,0 +1,14 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- clean:
+    - '~'
+    - '~/.config'
+
+- link:
+    ~/.tmux.conf: packages/tmux/tmux.conf
+    ~/.gitconfig: packages/git/gitconfig
+    ~/.config/alacritty/alacritty.toml: packages/alacritty/alacritty.toml
+    ~/.config/lazygit/config.yml: packages/lazygit/config.yml
