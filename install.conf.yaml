@@ -9,6 +9,9 @@
 
 - link:
     ~/.tmux.conf: packages/tmux/tmux.conf
-    ~/.gitconfig: packages/git/gitconfig
+    ~/.gitconfig: configs/git/gitconfig
     ~/.config/alacritty/alacritty.toml: packages/alacritty/alacritty.toml
     ~/.config/lazygit/config.yml: packages/lazygit/config.yml
+    ~/.config/alacritty/alacritty.toml: configs/alacritty/alacritty.toml
+    ~/.config/karabiner/karabiner.json: configs/karabiner/karabiner.toml
+    ~/.tmux.conf: configs/tmux/tmux.conf
