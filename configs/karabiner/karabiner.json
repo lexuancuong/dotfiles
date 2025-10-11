@@ -4,28 +4,6 @@
       "complex_modifications": {
         "rules": [
           {
-            "description": "Right command to right control",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "right_command",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "right_control",
-                    "lazy": false
-                  }
-                ],
-                "type": "basic"
-              }
-            ]
-          },
-          {
             "description": "Change command + h/j/k/l to Arrows",
             "manipulators": [
               {
@@ -253,6 +231,16 @@
               "key_code": "escape"
             }
           ]
+        },
+        {
+          "from": {
+            "key_code": "right_command"
+          },
+          "to": [
+            {
+              "key_code": "right_control"
+            }
+          ]
         }
       ],
       "virtual_hid_keyboard": {
@@ -262,3 +250,4 @@
     }
   ]
 }
+
