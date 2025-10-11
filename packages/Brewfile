@@ -46,6 +46,7 @@ cask "flameshot"
 cask "alacritty"
 cask "maccy"
 cask "karabiner-elements"
+cask "font-fira-code-nerd-font"
 
 # ----------------------------
 # 4. Mac App Store apps (via mas)
