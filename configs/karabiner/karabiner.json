@@ -4,11 +4,11 @@
       "complex_modifications": {
         "rules": [
           {
-            "description": "CapsLock as ESC, without delay",
+            "description": "Right command to right control",
             "manipulators": [
               {
                 "from": {
-                  "key_code": "caps_lock",
+                  "key_code": "right_command",
                   "modifiers": {
                     "optional": [
                       "any"
@@ -17,50 +17,11 @@
                 },
                 "to": [
                   {
-                    "key_code": "escape",
+                    "key_code": "right_control",
                     "lazy": false
                   }
                 ],
                 "type": "basic"
-              }
-            ]
-          },
-          {
-            "description": "Change input source with Command + Slash",
-            "manipulators": [
-              {
-                "type": "basic",
-                "from": {
-                  "key_code": "slash",
-                  "modifiers": {
-                    "mandatory": ["command"]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "spacebar",
-                    "modifiers": ["command"]
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "description": "Open Spotlight with Control + Space",
-            "manipulators": [
-              {
-                "type": "basic",
-                "from": {
-                  "key_code": "spacebar",
-                  "modifiers": {
-                    "mandatory": ["right_command"]
-                  }
-                },
-                "to": [
-                  {
-                    "shell_command": "open -a 'Spotlight'"
-                  }
-                ]
               }
             ]
           },
