@@ -4,6 +4,28 @@
       "complex_modifications": {
         "rules": [
           {
+            "description": "CapsLock as ESC, without delay",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "caps_lock",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "escape",
+                    "lazy": false
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "Change command + h/j/k/l to Arrows",
             "manipulators": [
               {
