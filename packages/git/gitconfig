@@ -2,8 +2,8 @@
 	ff = only
 [user]
 	name = lexuancuong
-	email =
-	signingkey =
+	email = cuongle.software@gmail.com
+	signingkey = 5008D0EFA326B408
 [core]
 	autocrlf = false
 [commit]
