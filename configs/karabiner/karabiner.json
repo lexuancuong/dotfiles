@@ -4,6 +4,28 @@
       "complex_modifications": {
         "rules": [
           {
+            "description": "CapsLock as ESC, without delay",
+            "manipulators": [
+              {
+                "from": {
+                  "key_code": "caps_lock",
+                  "modifiers": {
+                    "optional": [
+                      "any"
+                    ]
+                  }
+                },
+                "to": [
+                  {
+                    "key_code": "escape",
+                    "lazy": false
+                  }
+                ],
+                "type": "basic"
+              }
+            ]
+          },
+          {
             "description": "Change input source with Command + Slash",
             "manipulators": [
               {
@@ -39,28 +61,6 @@
                     "shell_command": "open -a 'Spotlight'"
                   }
                 ]
-              }
-            ]
-          },
-          {
-            "description": "CapsLock as ESC, without delay",
-            "manipulators": [
-              {
-                "from": {
-                  "key_code": "caps_lock",
-                  "modifiers": {
-                    "optional": [
-                      "any"
-                    ]
-                  }
-                },
-                "to": [
-                  {
-                    "key_code": "escape",
-                    "lazy": false
-                  }
-                ],
-                "type": "basic"
               }
             ]
           },
