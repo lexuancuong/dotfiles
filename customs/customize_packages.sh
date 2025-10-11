@@ -1,5 +1,6 @@
 BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 cd "${BASEDIR}"
+source "zsh/install_zsh.sh"
 source "xcode/install_xcode.sh"
 source "brew/install_brew.sh"
 source "fzf/install_fzf.sh"
