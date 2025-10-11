@@ -1,0 +1,12 @@
+BASEDIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "${BASEDIR}"
+source "xcode/install_xcode.sh"
+source "brew/install_brew.sh"
+source "fzf/install_fzf.sh"
+source "lazygit/install_lazygit.sh"
+source "pyenv/install_pyenv.sh"
+source "npm/install_npm.sh"
+source "neovim/install_neovim.sh"
+source "zsh/install_zsh.sh"
+source "rosetta/install_rosetta.sh"
+cd .. # Go back to the ./dotfiles level
