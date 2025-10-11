@@ -8,7 +8,7 @@ echo "======================================"
 
 source "utils/load_utils.sh"
 source "packages/install_packages.sh"
-source "configs/install_configs.sh"
+source "configs/configure_packages.sh"
 source "customs/customize_packages.sh"
 
 echo "======================================"
