@@ -1,3 +1,4 @@
+source "packages/brew/install_brew.sh"
 brew bundle --file=packages/Brewfile
 
 source "packages/zsh/install_zsh.sh"
