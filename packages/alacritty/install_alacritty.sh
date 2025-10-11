@@ -1,8 +1,3 @@
-if ! did_app_install alacritty; then
-  echo "📦  Installing alacritty"
-  brew install --cask alacritty
-fi
-
 print_package_version alacritty
 
 ALACRITTY_SETUP_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"

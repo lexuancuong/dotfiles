@@ -1,7 +1,5 @@
 if ! is_installed pyenv; then
     echo "📦 Installing pyenv and its dependencies..."
-    brew install openssl readline sqlite3 xz zlib tcl-tk
-    brew install pyenv
     if is_installed pyenv; then
         echo "✓ pyenv installed successfully"
         echo "  Version: $(pyenv --version)"

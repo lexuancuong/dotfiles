@@ -1,0 +1,52 @@
+# Brewfile — Homebrew bundle file for macOS setup
+
+# ----------------------------
+# 2. CLI Tools
+# ----------------------------
+brew "zoxide"
+brew "uv"
+
+# TMUX
+brew "tmux"
+brew "reattach-to-user-namespace"
+brew "rg"
+brew "openssl"
+brew "readline"
+brew "sqlite3"
+brew "xz"
+brew "zlib"
+brew "tcl-tk"
+brew "pyenv"
+brew "node"
+brew "lazygit"
+brew "git"
+brew "fzf"
+brew "git-delta"
+brew "bat"
+
+# ----------------------------
+# 3. Applications (Casks)
+# ----------------------------
+cask "google-chrome"
+cask "docker"
+cask "raycast"
+cask "slack"
+cask "postman"
+cask "font-jetbrains-mono"
+cask "ngrok"
+cask "flameshot"
+cask "alacritty"
+cask "maccy"
+cask "karabiner-elements"
+
+# ----------------------------
+# 4. Mac App Store apps (via mas)
+# ----------------------------
+# mas "Xcode", id: 497799835
+# mas "1Password 7", id: 1333542190
+
+# ----------------------------
+# 5. Custom notes
+# ----------------------------
+# Run: brew bundle install --file=~/dotfiles/Brewfile
+# To cleanup: brew bundle cleanup --file=~/dotfiles/Brewfile
