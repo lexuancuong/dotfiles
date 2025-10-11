@@ -26,6 +26,12 @@ brew "bat"
 brew "dotbot"
 brew "gnupg"
 
+# ZSH
+brew "zsh-autosuggestions"
+brew "zsh-completions"
+brew "zsh-syntax-highlighting"
+brew "zsh-vi-mode"
+
 # ----------------------------
 # 3. Applications (Casks)
 # ----------------------------

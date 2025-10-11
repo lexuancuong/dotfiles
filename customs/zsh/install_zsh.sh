@@ -17,26 +17,6 @@ function install_ohmyzsh {
   fi
 }
 
-if ! is_installed zsh; then
-  brew install zsh
-fi
-print_package_version zsh
-if ! did_brew_install "zsh-autosuggestions"; then
-  echo -e "${GREEN} Install zsh-autosuggestions..."
-  brew install zsh-autosuggestions
-fi
-if ! did_brew_install "zsh-completions"; then
-  echo "  ${GREEN} Install zsh-completions..."
-  brew install zsh-completions
-fi
-if ! did_brew_install "zsh-syntax-highlighting"; then
-  echo "  ${GREEN} Install zsh-syntax-highlighting..."
-  brew install zsh-syntax-highlighting
-fi
-if ! did_brew_install "zsh-vi-mode"; then
-  echo "  ${GREEN} Install zsh-vi-mode..."
-  brew install zsh-vi-mode
-fi
 install_ohmyzsh
 if ! is_installed oh-my-posh; then
   brew install jandedobbeleer/oh-my-posh/oh-my-posh
