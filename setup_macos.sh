@@ -13,6 +13,9 @@ echo "🚀 Starting MacOS Development Setup..."
 echo "======================================"
 
 brew bundle --file=~/dotfiles/Brewfile
+
+source "configs/create_symlink_configs.sh"
+
 source "packages/xcode/install_xcode.sh"
 source "packages/brew/install_brew.sh"
 source "packages/fzf/install_fzf.sh"

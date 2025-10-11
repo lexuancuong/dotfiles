@@ -1,0 +1,15 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+
+- clean:
+    - '~'
+    - '~/.config'
+
+- link:
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.gitconfig: git/gitconfig
+    ~/.config/alacritty/alacritty.toml: alacritty/alacritty.toml
+    ~/.config/alacritty/alacritty.toml: alacritty/alacritty.toml
+    ~/.config/karabiner/karabiner.json: karabiner/karabiner.json
