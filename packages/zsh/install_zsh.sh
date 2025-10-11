@@ -21,8 +21,3 @@ install_ohmyzsh
 if ! is_installed oh-my-posh; then
   brew install jandedobbeleer/oh-my-posh/oh-my-posh
 fi
-
-ZSH_SETUP_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-CUSTOM_ZSH_FILE="$ZSH_SETUP_DIR/zshrc"
-SYSTEM_ZSH_FILE="$HOME/.zshrc"
-create_symlink $CUSTOM_ZSH_FILE $SYSTEM_ZSH_FILE

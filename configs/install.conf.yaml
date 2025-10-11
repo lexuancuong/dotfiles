@@ -8,6 +8,7 @@
     - '~/.config'
 
 - link:
+    ~/.zshrc: zsh/zshrc
     ~/.tmux.conf: tmux/tmux.conf
     ~/.gitconfig: git/gitconfig
     ~/.config/alacritty/alacritty.toml: alacritty/alacritty.toml
