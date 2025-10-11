@@ -70,6 +70,7 @@ alias reload='source ~/.zshrc'
 alias gsync="git checkout master && git fetch upstream && git rebase upstream/master && git push"
 alias gl='git log --graph --oneline --decorate --all'
 alias lg='lazygit'
+export XDG_CONFIG_HOME="$HOME/.config" # Declare the config dir for Lazygit
 
 # Setting ag as the default source for fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

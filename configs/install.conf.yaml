@@ -11,6 +11,6 @@
     ~/.zshrc: zsh/zshrc
     ~/.tmux.conf: tmux/tmux.conf
     ~/.gitconfig: git/gitconfig
-    ~/.config/alacritty/alacritty.toml: alacritty/alacritty.toml
+    ~/.config/lazygit/config.yml: lazygit/config.yml
     ~/.config/alacritty/alacritty.toml: alacritty/alacritty.toml
     ~/.config/karabiner/karabiner.json: karabiner/karabiner.json
