@@ -4,14 +4,14 @@
       "complex_modifications": {
         "rules": [
           {
-            "description": "Change input source with Ctrl + Space",
+            "description": "Change input source with Command + Slash",
             "manipulators": [
               {
                 "type": "basic",
                 "from": {
-                  "key_code": "spacebar",
+                  "key_code": "slash",
                   "modifiers": {
-                    "mandatory": ["control"]
+                    "mandatory": ["command"]
                   }
                 },
                 "to": [
@@ -24,14 +24,14 @@
             ]
           },
           {
-            "description": "Open Spotlight with Cmd + Shift + Space",
+            "description": "Open Spotlight with Control + Space",
             "manipulators": [
               {
                 "type": "basic",
                 "from": {
                   "key_code": "spacebar",
                   "modifiers": {
-                    "mandatory": ["command", "shift"]
+                    "mandatory": ["control"]
                   }
                 },
                 "to": [
