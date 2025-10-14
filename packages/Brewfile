@@ -25,6 +25,7 @@ brew "git-delta"
 brew "bat"
 brew "dotbot"
 brew "gnupg"
+brew "tldr"
 
 # ZSH
 brew "zsh-autosuggestions"
