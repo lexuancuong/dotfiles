@@ -72,6 +72,9 @@ alias gl='git log --graph --oneline --decorate --all'
 alias lg='lazygit'
 export XDG_CONFIG_HOME="$HOME/.config" # Declare the config dir for Lazygit
 
+# MERMAID
+alias mermaid='docker run --publish 8000:8080 ghcr.io/mermaid-js/mermaid-live-editor'
+
 # Setting ag as the default source for fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
