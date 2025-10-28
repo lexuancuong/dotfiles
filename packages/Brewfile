@@ -34,6 +34,8 @@ brew "zsh-completions"
 brew "zsh-syntax-highlighting"
 brew "zsh-vi-mode"
 
+brew "webp"
+
 # ----------------------------
 # 3. Applications (Casks)
 # ----------------------------
@@ -49,6 +51,7 @@ cask "alacritty"
 cask "maccy"
 cask "karabiner-elements"
 cask "font-fira-code-nerd-font"
+cask "devtoys"
 
 # ----------------------------
 # 4. Mac App Store apps (via mas)

@@ -5,7 +5,7 @@
 dimensions = { columns = 120, lines = 40 }
 padding = { x = 8, y = 8 }
 decorations = "full"  # iTerm2-style title bar with buttons
-opacity = 0.7       # Less transparent like iTerm2 default
+opacity = 0.9       # Less transparent like iTerm2 default
 blur = true
 startup_mode = "Maximized"
 dynamic_padding = true  # Adjust padding like iTerm2
