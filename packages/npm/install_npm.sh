@@ -4,3 +4,5 @@ fi
 print_package_version npm
 
 npm install -g yarn
+npm install -g typescript
+npm install -g typescript typescript-language-server

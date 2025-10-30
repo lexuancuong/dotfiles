@@ -36,6 +36,11 @@ brew "zsh-vi-mode"
 
 brew "webp"
 
+# SCALA stuff
+brew "sbt"
+brew "openjdk@17"
+brew "coursier"
+
 # ----------------------------
 # 3. Applications (Casks)
 # ----------------------------
